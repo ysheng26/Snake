@@ -18,7 +18,7 @@ var speed = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	snake.connect("died", on_snake_died)
-	snake.position = Vector2(128, 128)
+	snake.position = Vector2(randi_range(1, 31) * 32, randi_range(1, 23) * 32)
 	spawn_food()
 
 

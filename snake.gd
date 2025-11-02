@@ -36,12 +36,12 @@ func _ready() -> void:
 
 
 var move_timer = 0
-const MOVE_DELAY = 0.4
+var move_delay = 0.2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	handle_input()
 	move_timer += delta
-	if move_timer >= MOVE_DELAY:
+	if move_timer >= move_delay:
 		move_timer = 0
 		move_snake(direction)
 
@@ -63,7 +63,7 @@ func on_snake_ate_food():
 	snake_body.position = snake_body_list[-1].position - direction * 32
 	snake_body_list.append(snake_body)
 	call_deferred("add_child", snake_body)
-
+	move_delay = max(0.05, move_delay-0.05)
 
 func on_snake_died():
 	emit_signal("died")

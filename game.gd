@@ -13,8 +13,6 @@ var FoodScene = preload("res://Food.tscn")
 # game spawns the snake and keeps spawning food
 # logic to update the snake and food should be here
 
-var speed = 10
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	snake.connect("died", on_snake_died)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxjchr0a20c7w"]
+
+[ext_resource type="Script" uid="uid://cchc4ayuj3cpq" path="res://game_over.gd" id="1_40baj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40baj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 1021.0
+offset_bottom = 243.0
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LblScore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 259.0
+offset_right = 1021.0
+offset_bottom = 424.0
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 448.0
+offset_right = 640.0
+offset_bottom = 512.0
+text = "Back To Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

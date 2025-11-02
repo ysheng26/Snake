@@ -1,9 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsqm68wyrv1vg"]
+[gd_scene load_steps=8 format=3 uid="uid://dsqm68wyrv1vg"]
 
 [ext_resource type="Script" uid="uid://yqo1bhb0ptc2" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://dh2d6mgittiec" path="res://Snake.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://3nyiapqkr8rd" path="res://assets/background.png" id="3_u44n3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
+size = Vector2(1155, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0x5m"]
+size = Vector2(84, 819)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb48q"]
+size = Vector2(1224.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t88pq"]
+size = Vector2(60, 838)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_80nbo")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("3_u44n3")
+
 [node name="Snake" parent="." instance=ExtResource("2_e2o6t")]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="TopWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(503.5, -1)
+shape = SubResource("RectangleShape2D_u44n3")
+
+[node name="RightWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(1056, 387.5)
+shape = SubResource("RectangleShape2D_r0x5m")
+
+[node name="BottomWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(531.75, 768)
+shape = SubResource("RectangleShape2D_sb48q")
+
+[node name="LeftWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/LeftWall"]
+position = Vector2(-20, 367)
+shape = SubResource("RectangleShape2D_t88pq")

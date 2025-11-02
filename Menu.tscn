@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpc5mbu1nsr32"]
+
+[ext_resource type="Script" uid="uid://bf3a70ipureuv" path="res://menu.gd" id="1_uubjt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uubjt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 1024.0
+offset_bottom = 344.0
+text = "Snake"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnStart" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 368.0
+offset_right = 704.0
+offset_bottom = 464.0
+text = "Start"
+
+[node name="BtnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 608.0
+text = "Exit"
+
+[connection signal="pressed" from="BtnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]

@@ -15,8 +15,8 @@ script = ExtResource("1_40baj")
 layout_mode = 0
 offset_left = 1.0
 offset_top = 78.0
-offset_right = 1021.0
-offset_bottom = 243.0
+offset_right = 768.0
+offset_bottom = 248.0
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -25,7 +25,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 1.0
 offset_top = 259.0
-offset_right = 1021.0
+offset_right = 768.0
 offset_bottom = 424.0
 text = "Score:"
 horizontal_alignment = 1
@@ -33,10 +33,10 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 448.0
-offset_right = 640.0
-offset_bottom = 512.0
+offset_left = 208.0
+offset_top = 488.0
+offset_right = 560.0
+offset_bottom = 608.0
 text = "Back To Menu"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

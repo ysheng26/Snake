@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://bd4jy0ab1jpcn"]
+
+[ext_resource type="Script" uid="uid://cp7u6qtynpr2j" path="res://mobile_game.gd" id="1_y0odq"]
+[ext_resource type="Texture2D" uid="uid://57jrklgrfsd3" path="res://assets/mobile_background.png" id="2_y0odq"]
+[ext_resource type="PackedScene" uid="uid://dh2d6mgittiec" path="res://Snake.tscn" id="3_jy3qx"]
+[ext_resource type="Texture2D" uid="uid://cifls2bcbwtp3" path="res://assets/up-normal.png" id="4_jy3qx"]
+[ext_resource type="Texture2D" uid="uid://dhre7caxsldmb" path="res://assets/up-pressed.png" id="5_jmopv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
+size = Vector2(1155, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0x5m"]
+size = Vector2(84, 819)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb48q"]
+size = Vector2(1224.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t88pq"]
+size = Vector2(60, 838)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_y0odq")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(384, 384)
+texture = ExtResource("2_y0odq")
+metadata/_edit_group_ = true
+
+[node name="Snake" parent="." instance=ExtResource("3_jy3qx")]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="TopWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(503.5, -1)
+shape = SubResource("RectangleShape2D_u44n3")
+
+[node name="RightWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+position = Vector2(800, 392)
+shape = SubResource("RectangleShape2D_r0x5m")
+
+[node name="BottomWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(531.75, 768)
+shape = SubResource("RectangleShape2D_sb48q")
+
+[node name="LeftWall" type="Area2D" parent="Walls"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/LeftWall"]
+position = Vector2(-20, 367)
+shape = SubResource("RectangleShape2D_t88pq")
+
+[node name="btnUp" type="TouchScreenButton" parent="."]
+position = Vector2(336, 776.00006)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_jy3qx")
+texture_pressed = ExtResource("5_jmopv")
+action = "up"
+
+[node name="btnRight" type="TouchScreenButton" parent="."]
+position = Vector2(528, 848)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_jy3qx")
+texture_pressed = ExtResource("5_jmopv")
+action = "right"
+
+[node name="btnDown" type="TouchScreenButton" parent="."]
+position = Vector2(432, 1016.0001)
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_jy3qx")
+texture_pressed = ExtResource("5_jmopv")
+action = "down"
+
+[node name="btnLeft" type="TouchScreenButton" parent="."]
+position = Vector2(240, 944)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4_jy3qx")
+texture_pressed = ExtResource("5_jmopv")
+action = "left"

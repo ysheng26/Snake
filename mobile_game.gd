@@ -7,6 +7,9 @@ var FoodScene = preload("res://Food.tscn")
 # maybe get a background later
 # 32 rows 24 cols
 
+# 24 rows 24 cols
+# leave 8 rows (256 px for buttons?)
+
 # 30 rows 22 cols
 # 16 margin all sides
 
@@ -16,7 +19,7 @@ var FoodScene = preload("res://Food.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	snake.connect("died", on_snake_died)
-	snake.position = Vector2(randi_range(1, 31) * 32, randi_range(1, 23) * 32)
+	snake.position = Vector2(randi_range(1, 23) * 32, randi_range(1, 23) * 32)
 	spawn_food()
 
 
@@ -26,7 +29,7 @@ func _process(delta: float) -> void:
 
 
 func spawn_food():
-	var pos = Vector2(randi_range(1, 31) * 32, randi_range(1, 23) * 32)
+	var pos = Vector2(randi_range(1, 23) * 32, randi_range(1, 23) * 32)
 	var food = FoodScene.instantiate()
 	food.position = pos
 	food.connect("consumed", spawn_food)

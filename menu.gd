@@ -15,5 +15,4 @@ func _on_btn_exit_pressed() -> void:
 
 
 func _on_btn_start_pressed() -> void:
-	print("hihihihi")
 	get_tree().change_scene_to_file("res://MobileGame.tscn")
